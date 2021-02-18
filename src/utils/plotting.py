@@ -9,7 +9,8 @@ def cq_line_plot(df, ylabel_str, xycols, logy=False, ax=None):
     """
     sns.set_style('white')
     ax1 = df.plot(x = xycols[0], y = xycols[2], kind = 'line', ylim = [0, 7],
-        ylabel = ylabel_str, logy = logy, ax = ax) #
+        logy = logy, ax = ax) #
+    ax.set_ylabel(ylabel_str)
     ax2 = ax1.twinx()
     df.plot(x = xycols[0], y = xycols[1], kind = 'scatter', ax = ax2, 
             color = 'orange', alpha = 0.5, s = 1)
