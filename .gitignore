@@ -1,2 +1,14 @@
 *.agdai
 MAlonzo/**
+
+src/utils/.ipynb_checkpoints/
+
+src/utils/__pycache__/
+
+src/.ipynb_checkpoints/
+
+src/__pycache__/
+
+data/
+
+output/
