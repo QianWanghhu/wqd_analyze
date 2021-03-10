@@ -7,7 +7,7 @@ obspath = '../data/obs/'
 modpath = '../data/mod/'
 outpath = '../output/'
 events_name = 'obs_storm_event_common.csv'
-obs_events = rainfall_events(obspath + events_name)
+obs_events = rainfall_events(outpath + events_name)
 
 # Read daily loads and flow
 day_load_flow = pd.read_csv(obspath+'low_interp_flow.csv', index_col='Date')
