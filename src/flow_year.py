@@ -19,6 +19,7 @@ time_format = "%H:%M:%S %d/%m/%Y"
 df.index = pd.to_datetime(df.index, format=time_format)
 # df.set_index(['Time'], inplace=True)
 
+
 for year in range(2006, 2020):
     print(year)
     time_str = [f'00:00:00 01/07/{year}', f'00:00:00 30/06/{year+1}']
