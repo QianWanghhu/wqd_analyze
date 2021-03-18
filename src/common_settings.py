@@ -22,4 +22,4 @@ hour_load_flow.index = pd.to_datetime(hour_load_flow.index)
 # Read modeling loads and flow
 mod_fl_fn = 'DIN_flow.csv'
 mod_load_flow = pd.read_csv(modpath + mod_fl_fn, index_col='Date')
-mod_load_flow.index = pd.to_datetime(mod_load_flow.index, dayfirst=True)
+mod_load_flow.index = pd.to_datetime(mod_load_flow.index, dayfirst=False)
