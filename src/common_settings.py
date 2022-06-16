@@ -6,7 +6,7 @@ from utils.concentration import rainfall_events
 obspath = '../data/obs/'
 modpath = '../data/mod/'
 outpath = '../output/'
-events_name = 'obs_storm_event_common.csv'
+events_name = 'obs_storm_event_common2.csv'
 obs_events = rainfall_events(outpath + events_name)
 
 # Read daily loads and flow
