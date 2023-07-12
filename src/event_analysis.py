@@ -17,7 +17,7 @@ from utils.signatures import update_cumul_df, load_flow_loc
 # Read files of events, daily load and flow, hourly flow, conc.
 dir_out = '../output/'
 dir_data = '../data/obs/'
-fn = ['obs_storm_event_common2.csv', 'low_interp_flow.csv',  '126001A_hourly.csv', 'gbr_WhiSun.xlsx']
+fn = ['obs_storm_event_common3.csv', 'low_interp_flow.csv',  '126001A_hourly.csv', 'gbr_WhiSun.xlsx']
 events = pd.read_csv(f'{dir_out}{fn[0]}', index_col='ID')
 daily_obs = pd.read_csv(f'{dir_data}{fn[1]}')
 hour_flow = pd.read_csv(f'{dir_data}{fn[2]}')
@@ -51,5 +51,5 @@ for ii in range(1, events.shape[0]+1):
     events.loc[ii, 'sample_aft_peak'] = wq_samples[wq_samples['DateTime'] > events.loc[ii, 'peaktime_flow_h']].shape[0]
     events.loc[ii, 'sample_on_peakday'] = wq_samples[wq_samples['DateTime'] >= events.loc[ii, 'peaktime_flow_d']][wq_samples['DateTime'] < events.loc[ii, 'peaktime_flow_d'] + datetime.timedelta(days=1)].shape[0]
 
-events.to_csv(dir_out+'event_obs_info.csv')
+events.to_csv(dir_out+'event_obs_info_new.csv')
     
