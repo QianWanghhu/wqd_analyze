@@ -49,7 +49,7 @@ for ii in range(1, events.shape[0]+1):
     events.loc[ii, 'num_obs_sample'] = wq_samples.shape[0]
     events.loc[ii, 'sample_bef_peak'] = wq_samples[wq_samples['DateTime'] < events.loc[ii, 'peaktime_flow_h']].shape[0]
     events.loc[ii, 'sample_aft_peak'] = wq_samples[wq_samples['DateTime'] > events.loc[ii, 'peaktime_flow_h']].shape[0]
-    events.loc[ii, 'sample_on_peakday'] = wq_samples[wq_samples['DateTime'] >= events.loc[ii, 'peaktime_flow_d']][wq_samples['DateTime'] < t_end + datetime.timedelta(days=1)].shape[0]
+    events.loc[ii, 'sample_on_peakday'] = wq_samples[wq_samples['DateTime'] >= events.loc[ii, 'peaktime_flow_d']][wq_samples['DateTime'] < events.loc[ii, 'peaktime_flow_d'] + datetime.timedelta(days=1)].shape[0]
 
 events.to_csv(dir_out+'event_obs_info.csv')
     
