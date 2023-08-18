@@ -269,7 +269,7 @@ def excel_save(data, fn, index=True):
     writer = pd.ExcelWriter(fn)
     for key, val in data.items():
            val.to_excel(excel_writer=writer,sheet_name=key,index=index)
-    writer.save()
+    # writer.save()
     writer.close()
     
     # End excel_save()
